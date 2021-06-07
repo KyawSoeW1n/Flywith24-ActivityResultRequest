@@ -6,7 +6,8 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.flywith24.activityresult.*
+import com.flywith24.activityresult.ActivityResultLauncher
+import com.flywith24.activityresult.launcher.*
 import com.flywith24.activityresult.permission.MultiPermissionLauncher
 
 
@@ -110,7 +111,14 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
      * 拍照，返回图片 Call Phone
      */
     fun requestReadWrite(view: View) {
-//        callPhoneLauncher.lunch(phoneNumber = "09222222222")
+        multiPermissionLauncher.lunch(
+            arrayOf(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            )
+        ) {
+            Log.i(TAG, "Read Write Permission Granted")
+        }
     }
 
 
@@ -118,7 +126,14 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
      * 拍照，返回图片 Call Phone
      */
     fun requestLocation(view: View) {
-//        callPhoneLauncher.lunch(phoneNumber = "09222222222")
+        multiPermissionLauncher.lunch(
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            )
+        ) {
+            Log.i(TAG, "Read Write Permission Granted")
+        }
     }
 
     companion object {
