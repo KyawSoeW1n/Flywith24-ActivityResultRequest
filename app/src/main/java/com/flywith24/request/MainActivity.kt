@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private val contactLauncher by lazy { PickContactLauncher() }
     private val launcher by lazy { ActivityResultLauncher() }
     private val multiPermissionLauncher by lazy { MultiPermissionLauncher() }
+    private val callPhoneLauncher by lazy { CallPhoneLauncher() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         lifecycle.addObserver(contactLauncher)
         lifecycle.addObserver(launcher)
         lifecycle.addObserver(multiPermissionLauncher)
+        lifecycle.addObserver(callPhoneLauncher)
     }
 
     /**
@@ -94,7 +96,29 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         ) {
             Log.i(TAG, "requestMultiPermissions: 全部通过")
         }
+    }
 
+    /**
+     * Call Phone
+     */
+    fun callPhone(view: View) {
+        callPhoneLauncher.lunch(phoneNumber = "09222222222")
+    }
+
+
+    /**
+     * 拍照，返回图片 Call Phone
+     */
+    fun requestReadWrite(view: View) {
+//        callPhoneLauncher.lunch(phoneNumber = "09222222222")
+    }
+
+
+    /**
+     * 拍照，返回图片 Call Phone
+     */
+    fun requestLocation(view: View) {
+//        callPhoneLauncher.lunch(phoneNumber = "09222222222")
     }
 
     companion object {

@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">ActivityResultDemo</string>
-    <string name="take_picture">拍照，返回图片path</string>
-    <string name="take_picture_preview">拍照，返回图片bitmap</string>
-    <string name="take_video">拍视频，返回视频path</string>
-    <string name="pick_contact">选择联系人，返回视频uri</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="take_picture_preview">Picture Preview</string>
+    <string name="take_video">Take Video</string>
+    <string name="pick_contact">Pick Contact</string>
     <string name="start_activity_for_result">startActivityForResult</string>
+    <string name="multi_permission">Multi Permission</string>
     <string name="second_activity">SecondActivity</string>
+    <string name="call_phone">Call Phone</string>
+    <string name="location">Request Location</string>
+    <string name="read_write">Request Read Write</string>
 </resources>
